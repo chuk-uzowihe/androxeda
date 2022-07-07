@@ -23,7 +23,7 @@ impl Timer {
         self.checked_time = time::Instant::now();
     }
 
-    pub fn render_tick(&mut self) -> bool {
+    pub fn update_tick(&mut self) -> bool {
         if self.checked_time - self.last_update_tick >= self.update_freq {
             self.last_update_tick = self.checked_time;
             true

@@ -2,6 +2,7 @@ use winit::{dpi, event_loop, window};
 use winit::event::Event;
 
 use crate::timer;
+use crate::render;
 
 pub fn run() {
     let event_loop = event_loop::EventLoop::new();
@@ -22,8 +23,8 @@ pub fn run() {
         if event == Event::MainEventsCleared {
             timer.time_check();
 
-            if timer.render_tick() {
-                // TODO: game state update
+            if timer.update_tick() {
+
             }
 
             if timer.draw_tick() {
@@ -32,7 +33,7 @@ pub fn run() {
         }
 
         if event == Event::RedrawRequested(window.id()) {
-            // TODO: render update
+
         }
     });
 }
